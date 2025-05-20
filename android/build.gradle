@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:+'
+    // ML Kit dependencies
+    implementation 'com.google.mlkit:text-recognition:16.0.0'
+}

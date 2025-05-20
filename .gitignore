@@ -1,0 +1,8 @@
+node_modules
+.env
+*.tgz
+
+.DS_Store
+
+android/.gradle
+android/build
