@@ -2,7 +2,9 @@ module.exports = {
     dependencies: {
       'expo-mlkit-ocr': {
         platforms: {
-          ios: null, // Currently not implemented for iOS
+          ios: {
+            sourceDir: './ios'
+          },
           android: {
             sourceDir: './android',
             packageImportPath: 'import com.expo.mlkitocr.ExpoMlkitOcrPackage;',
