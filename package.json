@@ -1,7 +1,7 @@
 {
   "name": "expo-mlkit-ocr",
   "version": "1.0.0",
-  "description": "React Native module for text recognition using Google's ML Kit on Android and Apple's Vision framework on iOS",
+  "description": "React Native module for text recognition using Google's ML Kit",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -11,13 +11,11 @@
     "react-native",
     "expo",
     "android",
-    "ios",
     "ocr",
     "mlkit",
-    "vision",
     "text-recognition",
-    "machine-learning",
-    "cross-platform"
+    "vision",
+    "machine-learning"
   ],
   "author": "Henry Arlt",
   "license": "MIT",
@@ -39,8 +37,6 @@
   "files": [
     "android/src",
     "android/build.gradle",
-    "ios/*.{h,m,swift}",
-    "expo-mlkit-ocr.podspec",
     "index.js",
     "index.d.ts",
     "react-native.config.js",

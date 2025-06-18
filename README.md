@@ -1,8 +1,8 @@
 # Expo ML Kit OCR
 
-A React Native module that provides text recognition functionality using Google's ML Kit Vision API on Android and Apple's Vision framework on iOS.
+A React Native module that provides text recognition functionality using Google's ML Kit Vision API. This module wraps the native ML Kit Text Recognition API for Android.
 
-> **Platform Support:** ✅ Android (ML Kit) | ✅ iOS (Vision Framework)
+> **Note:** Currently only supports Android platform.
 
 ## Installation
 
@@ -43,27 +43,6 @@ If you need to manually link:
      packages.add(new ExpoMlkitOcrPackage());
      return packages;
    }
-   ```
-
-### iOS Setup
-
-For iOS, the module uses Apple's Vision framework and will automatically link when using auto-linking.
-
-#### Requirements:
-- iOS 13.0 or higher (required for Vision text recognition)
-- Xcode 11 or higher
-
-The module will automatically be included via CocoaPods when you run:
-
-```bash
-cd ios && pod install
-```
-
-#### Manual Linking (if needed):
-If auto-linking doesn't work, add the following to your `ios/Podfile`:
-
-```ruby
-pod 'expo-mlkit-ocr', :path => '../node_modules/expo-mlkit-ocr'
    ```
 
 ## Usage
