@@ -1,29 +1,48 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+group = 'expo.henry3646.mlkitocr'
+
+def expoModulesCorePlugin = new File(project(":expo-modules-core").projectDir.absolutePath, "ExpoModulesCorePlugin.gradle")
+if (expoModulesCorePlugin.exists()) {
+  apply from: expoModulesCorePlugin
+  applyKotlinExpoModulesCorePlugin()
+
+  // Use Expo's configuration
+  useExpoPublishing()
 }
 
-apply plugin: 'com.android.library'
-
 android {
-    compileSdkVersion 33
+  compileSdkVersion safeExtGet('compileSdkVersion', 33)
 
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 33
-    }
+  defaultConfig {
+    minSdkVersion safeExtGet('minSdkVersion', 21)
+    targetSdkVersion safeExtGet('targetSdkVersion', 33)
+    versionCode 1
+    versionName "1.0.0"
+  }
 
-    sourceSets {
-        main {
-            java.srcDirs = ['src/main/java']
-        }
-    }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    jvmTarget = JavaVersion.VERSION_17.toString()
+  }
+
+  lintOptions {
+    abortOnError false
+  }
 }
 
 dependencies {
-    implementation 'com.facebook.react:react-native:+'
-    // ML Kit dependencies
-    implementation 'com.google.mlkit:text-recognition:16.0.0'
+  implementation project(':expo-modules-core')
+  
+  // ML Kit dependencies
+  implementation 'com.google.mlkit:text-recognition:16.0.0'
+}
+
+def safeExtGet(prop, fallback) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }

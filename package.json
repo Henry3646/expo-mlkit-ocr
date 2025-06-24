@@ -1,9 +1,9 @@
 {
   "name": "expo-mlkit-ocr",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "React Native module for text recognition using Google's ML Kit",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,14 +32,16 @@
     "react-native": "^0.79.2"
   },
   "peerDependencies": {
+    "expo-modules-core": ">=1.0.0",
     "react-native": ">=0.63"
   },
   "files": [
     "android/src",
     "android/build.gradle",
-    "index.js",
-    "index.d.ts",
-    "react-native.config.js",
-    "README.md"
+    "ios/",
+    "src/",
+    "expo-module.config.json",
+    "README.md",
+    "CHANGELOG.md"
   ]
 }
